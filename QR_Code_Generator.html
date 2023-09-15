@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            h1{
+               text-align: center;
+
+
+            }
+           #demo{
+                display: none;
+                
+            }
+        body{
+            background-color: lightblue;
+
+        }
+        .dem1 {
+            margin-top: 50px;
+            color:orangered;
+            background-color: yellow;
+            border-style: solid;
+            border-width: 3px;
+            border-radius: 5px;
+            padding: 10px;
+              
+            
+
+        }
+        
+        .container{
+              width:300px;
+              height:500px;
+              background-color: midnightblue;
+              margin: 50px;
+              border-radius: 10px;
+
+            }
+        .container input{
+                 width: 200px;
+                 border-style:solid;
+                 border-radius:10px;
+                 border-width: 3px;
+                 margin: 30px;
+                 padding:10px;
+                }
+            #button{
+                
+                border-width: 3px;
+                margin:40px;
+                border-radius:10px;
+                padding:10px;
+                cursor: pointer;
+                background-color: green;
+                color:white;
+              }
+       </style>
+  </head>
+   <body>
+    <h1 id="demo1">welcome to Guthuru vinaykumar</h1>
+    <center>
+
+      <div class="container">
+        <div class="dem1">
+        <p1 >QR code generator </p1>
+        </div>
+        <input type="text" placeholder="Enter your QR or URL" id="qrvalue"><br>
+        <img id="demo" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=Example" +qrvalue.value>
+        <button id="button" onclick="qrcodecodegenerator()">GenearteQRcode</button>
+        </div>
+    </center>
+    <script>
+        function qrcodecodegenerator(){
+            if(qrvalue.value.length >0){
+               document.getElementById("demo").style.display="block";
+            }
+            else{
+               qrvalue.classList.add('Error');
+              
+            }
+             
+        }
+        let text=["HTML" ,"CSS","JAVASCRIPT"];
+        let color=["yellow","red","blue"];
+        let alin=["left","center","middle"];
+        let x=document.getElementById("demo1");
+        
+        let i=0;
+        function changecontent(){
+          x.innerHTML=text[i];
+          x.style.backgroundColor=color[i]; 
+          x.style.alignItems=alin[i] ;      
+          i++;
+          if(i==3)
+          i=0;
+
+        }
+        setInterval(changecontent,1000);
+
+
+
+        </script>
+
+
+
+</body>
+</html>
