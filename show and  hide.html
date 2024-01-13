@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <style>
+             #content{
+                display: none;
+             }
+        </style>
+        </head>
+        <body>
+            <div id="content">
+                <p>vinaykumar guthuru</p>
+              </div>
+              
+              <button onclick="toggleContent()">show</button>
+              
+              <script>
+                function toggleContent() {
+                  var content = document.getElementById("content");
+                  var button = document.querySelector("button");
+              
+                  if (content.style.display === "block") {
+                        content.style.display = "none";
+                       button.innerHTML = "show";
+                     }
+                      else {
+                      content.style.display = "block";
+                          button.innerHTML = "Hide";
+                        }
+                }
+                </script>
+        </body>
+</html>
