@@ -1,0 +1,127 @@
+<html>
+    <head>
+
+    <title>Humberger</title>
+    <style>
+         *{
+            padding: 0;
+            margin:0;
+            box-sizing: border-box;
+         }
+         header{
+            background-color: black;
+         }
+         li{
+            list-style: none;
+         }
+         a{
+            color: white;
+         }
+         .nav-bar{
+            max-height: 70px;
+             display: flex;
+             justify-content: space-between;
+             align-items: center; 
+             padding: 0 25px;
+             }
+          .nav-menu{
+             display: flex;
+             justify-content: space-between;
+             align-items: center;
+             gap: 60px;
+          }
+          .nav-brand{
+            font-size: 3rem;
+          }
+          .navlink{
+             transition: 0.5s ease;
+          }
+          .navlink:hover{
+            color:red;
+          }
+          .humberger{
+            display: none;
+            cursor: pointer;
+          }
+          .bar{
+            display: block;
+            width:25px;
+            height:3px;
+            margin:5px auto;
+            -webkit-transition :all 0.3s ease-in-out;
+              transition:all  0.3s ease-in-out;
+              background-color: white;
+          }
+           @media screen {
+             .humberger{
+                display: block;
+             }
+             .humberger.active .bar:nth-child(2){
+                 opacity: 0;
+             }
+             .humberger.active .bar:nth-child(1){
+                  transform: translateY(8px) rotate(45deg);
+             }
+             .humberger.active .bar:nth-child(3){
+                  transform: translateY(-8px) rotate(-45deg);
+             }
+             .nav-menu{
+                position: fixed;
+                left:-1000;
+                top:52px;
+                gap: 12px;;
+                flex-direction: column;
+                background-color: black; 
+                width: 10%; 
+                text-align: center;
+                transition: 0.3s;
+             }
+             .nav-item{
+                 margin: 16px 0;
+
+             }
+             .nav-menu.active{
+                left:0;
+             }
+            
+           }
+
+        </style>
+   </head> 
+    <body>
+        <header>
+             <nav class="nav-bar">
+                <a href="#" class="nav-brand">vinaykumar</a>
+                 <ul class="nav-menu">
+                   <li class="nav-item">
+                     <a href="#" class="navlink">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="navlink">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="navlink">Contant</a>
+                    </li>
+                   
+                    
+                 </ul>
+                  <div class="Humberger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+
+                    </div>
+
+                </nav>
+            </header>
+            <script>
+                const humberger = document.querySelector(".humberger");
+                const  navmenu = document.querySelector(".nav-menu");
+                 humberger.addEventListener("click",()=>{
+                    humberger.classList.toggle("active");
+                    navmenu.classList.toggle("active");
+                 })
+                </script>
+        </body>  
+        
+</html>
