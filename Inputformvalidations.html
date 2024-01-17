@@ -1,0 +1,115 @@
+<html>
+    <head>
+        <title> form for validations </title>
+        <style>
+              #form{
+                width: 300px;
+                height: 400px;
+                background-color:green;
+                justify-content: center;
+        
+                margin-left: 40%;
+                margin-top: 10%;
+
+
+              }
+              .name1{
+                padding: 30px;
+              }
+              #sub{
+                margin-left:120px;
+                margin-top: 50px;
+              }
+              form{
+                border-radius: 15px;
+              }
+              #password{
+                margin-left: 0.5px;
+              }
+            </style>
+
+    </head>
+        <body>
+             
+
+          <form id="form" onsubmit="validationchecking(event)">
+             
+            <div class="name1">
+              <label for="name">Name:</label>
+               <input type="text" id="name" name="name" required>
+              <span id="nameError" class="error"></span>
+               <br>
+               </div>
+
+               <div class="name1">
+               <label for="email ">Email:</label>
+               <input type="email" id="email" name="email" required>
+               <span id="emailError" class="error">
+               </div>
+               <br>
+
+               <div class="name1">
+                <label for="email ">password:</label>
+                <input type="password" id="password" name="password" required>
+                <span id="PasswordError" class="error">
+                </div>
+
+                 <input type="submit" value="submit" id="sub">
+               </form>
+               <script>
+                 
+                  function validationchecking(event){
+                      event.preventDefault();
+                       var inputname=document.getElementById('name');
+                       var inputemail = document.getElementById('email');
+                       var inputNameError=document.getElementById('nameError');
+                       var inputEmailError=document.getElementById('emailError');
+                       var inputpassword = document.getElementById('password');
+                       var inputPasswordError=document.getElementById('PasswordError');
+                    
+                      inputNameError.textContent='';
+                      inputEmailError.textContent='';
+                      inputPasswordError.textContent='';
+
+                       var isValid=true;
+
+                        if(inputname.value.trim()===''){
+                            inputNameError.textContent="Name is required";
+                           isValid=false;
+
+                        }
+                        if(inputemail.value.trim()===''){
+                            inputEmailError.textContent="Email is required";
+                            isValid=false;
+
+                        } 
+                         if(!isValid)
+                         {
+                            return;
+                         }
+                         console.log('name',inputname.value);
+                          console.log('email',inputemail.value);
+                          console.log('password',inputpassword.value);
+                            
+
+                  }
+
+
+
+                </script>
+
+
+
+
+
+
+        </body>
+
+
+
+
+
+
+
+
+<html>
