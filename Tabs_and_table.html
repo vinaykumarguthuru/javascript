@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>Tabs and table Content</title>
+        <style>
+              .tablecontent{
+                 display: none;
+              }
+
+            </style>
+        </head>
+        <body>
+             <button onclick="showtable('tab1')">Table1</button><br>
+              
+             <button onclick="showtable('tab2')">Table2</button><br>
+            
+             <button onclick="showtable('tab3')">Table3</button><br>
+
+             <div id="tab1" class="tablecontent">
+                <p>This is a table content 1</p>
+                </div>
+
+            <div id="tab2" class="tablecontent">
+            <p>This is a table content 2</p>
+             </div>
+              
+             <div id="tab3" class="tablecontent">
+                <p>This is a table content 3</p>
+                 </div>
+                
+              <script>
+                   function showtable(tabid){
+                    var tabs = document.getElementsByClassName('tablecontent');
+                       for (var i = 0; i < tabs.length; i++) {
+                         tabs[i].style.display = 'none';
+                       }
+                     document.getElementById(tabid).style.display='block';
+
+                   }
+
+                </script>
+                 
+                 
+              
+
+              
+            </body>
+
+
+    </html>
